@@ -1,24 +1,24 @@
 <?php
 
-namespace App\Http\Requests;
+declare(strict_types=1);
 
-use App\Traits\ResponseBuilder;
+namespace App\Http\Requests\Shared;
+
+use App\Common\ResponseBuilder;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Symfony\Component\HttpFoundation\Response;
 
-class ApiRequest extends FormRequest
+final class ApiRequest extends FormRequest
 {
-    use ResponseBuilder;
-
-    protected function failedValidation(Validator $validator)
+    protected function failedValidation(Validator $validator): void
     {
-        throw new HttpResponseException($this->unprocessableEntityResponseBuilder(
+        throw new HttpResponseException(ResponseBuilder::unprocessableEntityResponseBuilder(
             status: true,
             code: Response::HTTP_UNPROCESSABLE_ENTITY,
             message: 'Unprocessable request.',
-            description: 'The request is invalid. Check the request and try again.',
+            description: 'The request is invalid. Check it and try again.',
             error: $validator->errors()->all()
         ));
     }
