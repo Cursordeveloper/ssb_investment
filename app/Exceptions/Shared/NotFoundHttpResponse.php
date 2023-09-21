@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 final class NotFoundHttpResponse extends Exception
 {
-    public function report(): JsonResponse
+    public function render(): JsonResponse
     {
         return ResponseBuilder::resourcesResponseBuilder(
             status: false,
