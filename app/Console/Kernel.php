@@ -11,7 +11,7 @@ final class Kernel extends ConsoleKernel
 {
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command(command: 'app:message-consumer')->everySecond();
     }
 
     protected function commands(): void
