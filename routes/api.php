@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
 
-/**
- * Version 1
- */
-Route::prefix('v1')
-    ->as('v1:')
-    ->middleware(['ip_address', 'allow:GET'])
+Route::prefix('v1/investment')
+    ->as('v1.investment:')
     ->group(base_path('routes/v1/routes.php'));
