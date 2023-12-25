@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
 
-Route::group([], function (): void {
+Route::group([], function () {
     // Iterate through each folder
-    $dirIterator = new RecursiveDirectoryIterator(directory: __DIR__.'/routes');
+    $dirIterator = new RecursiveDirectoryIterator(directory: __DIR__.'/common');
 
     /** @var RecursiveDirectoryIterator | RecursiveIteratorIterator $recursive */
     $recursive = new RecursiveIteratorIterator($dirIterator);
