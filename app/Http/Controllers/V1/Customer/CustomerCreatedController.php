@@ -12,7 +12,6 @@ final class CustomerCreatedController extends Controller
 {
     public function __invoke(Request $request): void
     {
-        logger($request);
         // Create the customer and return the response
         CustomerCreatedAction::execute(data: $request->all());
     }
