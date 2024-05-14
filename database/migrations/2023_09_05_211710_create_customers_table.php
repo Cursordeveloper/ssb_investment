@@ -16,13 +16,9 @@ return new class extends Migration
             $table->uuid(column: 'resource_id')->unique()->nullable(value: false);
 
             // Table main attributes
-            $table->string(column: 'first_name');
-            $table->string(column: 'last_name');
-
             $table->string(column: 'phone_number')->unique()->nullable();
-            $table->string(column: 'email')->unique()->nullable();
 
-            $table->string(column: 'status')->default(value: 'pending');
+            $table->string(column: 'status');
         });
     }
 

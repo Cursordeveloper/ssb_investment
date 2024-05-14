@@ -6,6 +6,7 @@ use App\Http\Controllers\V1\Customer\CustomerCreatedController;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'customers', 'as' => 'customers.'], function (): void {
+    // Store registered customer route
     Route::post(
         uri: '',
         action: CustomerCreatedController::class

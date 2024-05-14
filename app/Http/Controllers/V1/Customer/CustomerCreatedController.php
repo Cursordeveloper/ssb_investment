@@ -13,6 +13,6 @@ final class CustomerCreatedController extends Controller
     public function __invoke(Request $request): void
     {
         // Create the customer and return the response
-        CustomerCreatedAction::execute(data: $request->all());
+        CustomerCreatedAction::execute(request: $request->all());
     }
 }

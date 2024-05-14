@@ -18,10 +18,7 @@ final class Customer extends Model
     protected $fillable = [
         'id',
         'resource_id',
-        'first_name',
-        'last_name',
         'phone_number',
-        'email',
         'status',
     ];
 
